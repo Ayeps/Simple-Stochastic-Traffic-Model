@@ -33,11 +33,11 @@ def simulate(realizations,pointOfItrs):
 
     if pointOfItrs==45 :
         return prob_45
-    elif pointOfItrs==30 :
+    elif pointOfItrs==35 :
         return prob_30
-    elif pointOfItrs==10 :
+    elif pointOfItrs==15 :
         return prob_10
-    elif pointOfItrs==0 :
+    elif pointOfItrs==5 :
         return prob_0
 
 ######################################################################
@@ -49,6 +49,10 @@ def main():
     start = int(input('start :'))
     end = int(input('end: '))
     inv = int(input('intervals:'))
+    print('take note of the ff:')
+    print('\n45 minutes has 45 per cent of chance\n30 minutes has 35 per cent of chance')
+    print('10 minutes has 15 per cent of chance\n0 minutes has 5 per cent of chance')
+    print('^these are all a priori probabilities\n')
     pointOfItrs = int(input(' which a priori probability to track: '))
 
     #variables to be observed!
@@ -59,9 +63,9 @@ def main():
     for x in runs:
         resultOfRuns.append(simulate(x,pointOfItrs))
 
-    #print(resultOfRuns)
-    #print(runs)    
-    
+
+    print(resultOfRuns)
+    print(runs)    
 
     #graphing part!
     style.use('seaborn-whitegrid')
